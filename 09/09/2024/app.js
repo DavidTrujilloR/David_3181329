@@ -1,5 +1,5 @@
- // Lista de productos disponibles en la tienda
- var productos = [
+// Lista de productos disponibles en la tienda
+var productos = [
     { nombre: 'Camisa', precio: 300 },
     { nombre: 'Pantalón', precio: 500 },
     { nombre: 'Zapatos', precio: 800 },
@@ -43,6 +43,18 @@ function mostrarCarritoYTotal() {
     }
 }
 
+// Función para agregar artículos al carrito
+function agregarArticulo() {
+    var nombre = prompt("Ingrese el nombre del artículo:");
+    var precio = parseFloat(prompt("Ingrese el precio del artículo:"));
+    if (nombre && !isNaN(precio)) {
+        productos.push({ nombre: nombre, precio: precio });
+        console.log('Artículo "' + nombre + '" agregado a la lista de productos.');
+    } else {
+        console.log("Datos inválidos. Por favor, intente de nuevo.");
+    }
+}
+
 // Bucle principal de la tienda
 var opcion;
 do {
@@ -52,7 +64,7 @@ do {
     opcion = Number(opcion);
 
     // Verificar si la opción es válida
-    if (isNaN(opcion) || opcion < 1 || opcion > productos.length + 2) {
+    if (isNaN(opcion) || opcion < 1 || opcion > productos.length + 3) {
         console.log("Opción no válida, por favor intenta de nuevo.");
     } else if (opcion >= 1 && opcion <= productos.length) {
         // Si la opción es válida y corresponde a un producto, agregar al carrito
@@ -60,7 +72,10 @@ do {
     } else if (opcion === productos.length + 1) {
         // Si elige ver el carrito y el total
         mostrarCarritoYTotal();
+    } else if (opcion === productos.length + 2) {
+        // Si elige agregar un nuevo artículo
+        agregarArticulo();
     }
-} while (opcion !== productos.length + 2); // El bucle continúa hasta que elige "Salir"
+} while (opcion !== productos.length + 3); // El bucle continúa hasta que elige "Salir"
 
 console.log("Gracias por visitar la tienda.");
