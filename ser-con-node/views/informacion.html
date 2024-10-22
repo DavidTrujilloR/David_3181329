@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Información Genérica</h1>
-    <p>Esta es una página con información genérica.</p>
+    <p id="info"></p>
+    <script>
+        fetch('/get-info')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('info').textContent = `Nombre: ${data.nombre}`;
+            });
+    </script>
 </body>
 </html>
