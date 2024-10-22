@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Información</title>
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/ser-con-node/public/css/estilos.css">
 </head>
 <body>
     <h1>Información Genérica</h1>
@@ -12,7 +12,12 @@
         fetch('/get-info')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('info').textContent = `Nombre: ${data.nombre}`;
+                document.getElementById('info').innerHTML = `
+                    <strong>Nombre:</strong> ${data.nombre}<br>
+                    <strong>No. de Cuenta:</strong> ${data.cuenta}<br>
+                    <strong>Fecha de Nacimiento:</strong> ${data.fecha}<br>
+                    <strong>Plantel Escolar:</strong> ${data.plantel}
+                `;
             });
     </script>
 </body>

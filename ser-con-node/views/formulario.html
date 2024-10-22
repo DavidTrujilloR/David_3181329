@@ -3,13 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/ser-con-node/public/css/estilos.css">
 </head>
 <body>
     <h1>Formulario</h1>
     <form action="/submit-form" method="POST">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="cuenta">No. de Cuenta:</label>
+        <input type="text" id="cuenta" name="cuenta" required>
+
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="plantel">Plantel Escolar:</label>
+        <select id="plantel" name="plantel" required>
+            <option value="Facultad de Ciencias">Facultad de Ciencias</option>
+            <option value="Facultad de Ingeniería">Facultad de Ingeniería</option>
+            <option value="Facultad de Medicina">Facultad de Medicina</option>
+            <option value="Facultad de Derecho">Facultad de Derecho</option>
+            <Option value="Facultad de Arquitectura">Facultad de Arquitectura</Option>
+            <Option value="Facultad de Artes y Diseño">Facultad de Artes y Diseño</Option>
+            <Option value="Facultad de Ciencias Políticas y Sociales">Facultad de Ciencias Políticas y Sociales</Option>
+            <Option value="Facultad de Contaduría y Administración">Facultad de Contaduría y Administración</Option>
+            <Option value="Facultad de Economía">Facultad de Economía</Option>
+            <Option value="Facultad de Estudios Superiores (FES) Acatlán">Facultad de Estudios Superiores (FES) Acatlán</Option>
+            <Option value="Facultad de Estudios Superiores (FES) Aragón">Facultad de Estudios Superiores (FES) Aragón</Option>
+            <Option value="Facultad de Estudios Superiores (FES) Cuautitlán">Facultad de Estudios Superiores (FES) Cuautitlán</Option>
+            <Option value="Facultad de Estudios Superiores (FES) Iztacala">Facultad de Estudios Superiores (FES) Iztacala</Option>
+            <Option value="Facultad de Estudios Superiores (FES) Zaragoza">Facultad de Estudios Superiores (FES) Zaragoza</Option>
+            <Option value="Facultad de Filosofía y Letras">Facultad de Filosofía y Letras</Option>
+            <Option value="Facultad de Medicina Veterinaria y Zootecnia">Facultad de Medicina Veterinaria y Zootecnia</Option>
+            <Option value="Facultad de Música">Facultad de Música</Option>
+            <Option value="Facultad de Odontología">Facultad de Odontología</Option>
+            <Option value="Facultad de Psicología">Facultad de Psicología</Option>
+            <Option value="Facultad de Química">Facultad de Química</Option>
+        </select>
+
         <button type="submit">Enviar</button>
     </form>
 </body>
